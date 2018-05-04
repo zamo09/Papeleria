@@ -136,3 +136,7 @@ SELECT id_empresa FROM departamentos WHERE id_departamento =3;
 SELECT MAX(id_pedido) from pedido WHERE abierto = 1 and id_departamento = 3;
 SELECT MAX(id_pedido) from pedido WHERE abierto = 1 and id_departamento = 12;
 SELECT id_departamento FROM departamentos WHERE nombre = 'Omar';
+
+-- Selects para Reportes --
+-- Por tienda --
+SELECT id_papeleria, nombre FROM papeleria WHERE activo = 1;
