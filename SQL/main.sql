@@ -140,3 +140,15 @@ SELECT id_departamento FROM departamentos WHERE nombre = 'Omar';
 -- Selects para Reportes --
 -- Por tienda --
 SELECT id_papeleria, nombre FROM papeleria WHERE activo = 1;
+-- Por empresa --
+SELECT id_empresa, nombre FROM empresa WHERE activo = 1;
+-- Por Departamento --
+SELECT id_departamento, nombre FROM departamentos WHERE activo = 1;
+
+-- Para Hacer eñ re´prte general de por departamentos -- 
+SELECT D.nombre, P.nombre, L.cantidad, P.unidad FROM departamentos D, productos P, listado L, pedido PE 
+WHERE PE.id_pedido = L.id_pedido AND P.id_producto = L.id_producto AND  PE.id_departamento = D.id_departamento  AND PE.id_departamento = 2 AND PE.abierto = 0; 
+
+-- Para hacer el reporte de todos los departamentos --
+SELECT D.nombre, P.nombre, L.cantidad, P.unidad FROM departamentos D, productos P, listado L, pedido PE 
+WHERE PE.id_pedido = L.id_pedido AND P.id_producto = L.id_producto AND  PE.id_departamento = D.id_departamento AND PE.abierto = 0; 
