@@ -5,7 +5,7 @@ $Depto = $_GET['depto'];
 $Fecha1 = $_GET['fecha1'];
 $Fecha2 = $_GET['fecha2'];
 
-$SQL= "SELECT D.nombre, P.nombre, L.cantidad, P.unidad, L.id_listado FROM departamentos D, productos P, listado L, pedido PE WHERE PE.id_pedido = L.id_pedido AND P.id_producto = L.id_producto AND  PE.id_departamento = D.id_departamento AND PE.abierto = 0 "; 
+$SQL= "SELECT D.nombre, P.nombre, L.cantidad, P.unidad, L.id_listado, PA.nombre FROM departamentos D, productos P, listado L, pedido PE, papeleria PA WHERE PE.id_pedido = L.id_pedido AND P.id_producto = L.id_producto AND  PE.id_departamento = D.id_departamento AND PE.abierto = 0 AND PA.id_Papeleria = L.id_papeleria "; 
 if($Papeleria == 0){
 
 }else{

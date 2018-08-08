@@ -24,6 +24,7 @@
 						<th>Cantidad</th>
 						<th>Unidad</th>
 						<th>Departamento</th>
+						<th>Papeleria</th>
 						<th>Modificar</th>
 					</tr>
 				<?php
@@ -33,7 +34,8 @@
 						echo '<td>' . $fila[2] . '</td>';
 						echo '<td>' . $fila[3] . '</td>';
 						echo '<td>' . $fila[0] . '</td>';
-						echo '<td> <a class="button red small radius" href=../PHP/modificar_listado.php?id='. $fila[4] .'>Modificar</a>';
+						echo '<td>' . $fila[5] . '</td>';
+ 						echo '<td> <a class="button red small radius" href=../PHP/modificar_listado.php?id='. $fila[4] .'>Modificar</a>';
 					echo '</tr>';
 				}
 				?>
