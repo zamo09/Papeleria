@@ -152,3 +152,5 @@ WHERE PE.id_pedido = L.id_pedido AND P.id_producto = L.id_producto AND  PE.id_de
 -- Para hacer el reporte de todos los departamentos --
 SELECT D.nombre, P.nombre, L.cantidad, P.unidad FROM departamentos D, productos P, listado L, pedido PE 
 WHERE PE.id_pedido = L.id_pedido AND P.id_producto = L.id_producto AND  PE.id_departamento = D.id_departamento AND PE.abierto = 0; 
+
+select PO.nombre,PO.marca,PO.unidad,PA.nombre FROM productos PO, papeleria PA WHERE PO.id_papeleria = PA.id_papeleria and PO.activo = 1;

@@ -7,7 +7,7 @@
 	<?php 	 
 	$id_departamento = $_GET['Dept'];
 	$fecha = $_GET['fecha'];
-	$folio = $_GET['folio'];
+	$folio1 = $_GET['folio'];
 	include ("PHP/conexion.php");
 			$conexion = mysql_connect($servidor,$usuario,$contraseña);
 						mysql_select_db($BD, $conexion);
@@ -56,7 +56,7 @@
 				include ("PHP/conexion.php");
 				$conexion = mysql_connect($servidor,$usuario,$contraseña);
 							mysql_select_db($BD, $conexion);
-				$sql = "SELECT Pr.nombre AS Concepto, L.cantidad AS Cantidad, Pr.unidad AS Unidad FROM productos Pr, listado L, pedido P WHERE L.id_pedido = " . $folio[0] . " And P.id_pedido = " . $folio[0] . " AND L.id_producto = Pr.id_producto;";
+				$sql = "SELECT L.id_listado AS Id, Pr.nombre AS Concepto, L.cantidad AS Cantidad, Pr.unidad AS Unidad FROM productos Pr, listado L, pedido P WHERE L.id_pedido = " . $folio[0] . " And P.id_pedido = " . $folio[0] . " AND L.id_producto = Pr.id_producto;";
 				$result = mysql_query($sql,$conexion);
 				if(empty($result)){
 
@@ -66,7 +66,7 @@
 					echo '<td>' . $fila["Cantidad"] . '</td>';
 					echo '<td>' . $fila["Concepto"] . '</td>';
 					echo '<td>' . $fila["Unidad"] . '</td>';
-					echo '<td><a href="">Eliminar</a></td>';
+					echo '<td><a href="PHP/eliminar_listado.php?ID=' .$fila["Id"] . '&Dept=' . $id_departamento . '&fecha=' . $fecha . ' &folio=' . $folio1 . '">Eliminar</a></td>';
 					echo '</tr>';
 					}
 				}				

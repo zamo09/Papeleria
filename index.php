@@ -6,7 +6,7 @@
 	<form action="PHP/insertar_pedido.php" method="GET">
 		<div id="contenedor">
 			<h1>Pedidos de papeleria</h1>
-			<p>Para realizar el pedido de papeleria se tiene que seleccionar el departamento del cual se pedira el pedido y se da clic en el boton continuar. </p>
+			<p>Para realizar el pedido de papeleria se tiene que seleccionar el departamento del cual se pedira el pedido y se da clic en el boton continuar. segjhs sadas asd</p>
 			<label>Departamento: </label>
 				<select name="Dept">
 					<?php

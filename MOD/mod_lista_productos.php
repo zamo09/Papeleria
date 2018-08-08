@@ -8,32 +8,32 @@
 	</head>
 	<body>
 		<?php 
-			$SQL = $_GET["SQL"];
+			$SQL = "SELECT PO.id_producto, PO.nombre,PO.marca,PO.unidad,PA.nombre FROM productos PO, papeleria PA WHERE PO.id_papeleria = PA.id_papeleria and PO.activo = 1;";
 			include("../PHP/conexion.php");
 			$conexion = mysql_connect($servidor,$usuario,$contraseña);
 						mysql_select_db($BD,$conexion);
 						mysql_query("SET NAMES 'utf8'");
-			$selectReporte = mysql_query($SQL,$conexion);
+			$selectTable = mysql_query($SQL,$conexion);
 		?>
 		<div id="container">	
 			<div id="content">
 				<h1>Reporte de Papeleria</h1>
 				<table>
 					<tr>
-						<th>Producto</th>
-						<th>Cantidad</th>
+						<th>Nombre</th>
+						<th>Marca</th>
 						<th>Unidad</th>
-						<th>Departamento</th>
-						<th>Modificar</th>
+						<th>Papeleria</th>
+						<th>Eliminar</th>
 					</tr>
 				<?php
-				while ($fila = mysql_fetch_array($selectReporte)){
+				while ($fila = mysql_fetch_array($selectTable)){
 					echo '<tr>';
 						echo '<td>' . $fila[1] . '</td>';
 						echo '<td>' . $fila[2] . '</td>';
 						echo '<td>' . $fila[3] . '</td>';
-						echo '<td>' . $fila[0] . '</td>';
-						echo '<td> <a class="button red small radius" href=../PHP/modificar_listado.php?id='. $fila[4] .'>Modificar</a>';
+						echo '<td>' . $fila[4] . '</td>';
+						echo '<td> <a class="button red small radius" href=../PHP/eliminar_producto.php?id='. $fila[0] .'>Eliminar</a>';
 					echo '</tr>';
 				}
 				?>
@@ -44,3 +44,6 @@
 		</div>	
 	</body>
 </html>
+<li>
+	
+</li>
