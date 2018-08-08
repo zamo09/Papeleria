@@ -31,7 +31,7 @@ if ($Fecha1 == ""){
 }
 
 if ($Fecha2 == ""){
-	$SQL = $SQL . ";";
+	$SQL = $SQL . " order by D.nombre;";
 }else{
 	$SQL = $SQL . "AND PE.fecha <= '" . $Fecha2 . "';";
 }

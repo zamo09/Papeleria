@@ -9,6 +9,7 @@
 	<body>
 		<?php 
 		$id_listado = $_GET['id'];
+		$sqlpas = $_GET['SQL'];
 		$SQL= "SELECT D.nombre, P.nombre, L.cantidad, P.unidad, PA.nombre, L.id_listado FROM departamentos D, productos P, listado L, pedido PE, papeleria PA WHERE PE.id_pedido = L.id_pedido AND P.id_producto = L.id_producto AND  PE.id_departamento = D.id_departamento AND PE.abierto = 0 AND L.id_listado = " . $id_listado . " AND PA.id_Papeleria = L.id_papeleria;"; 
 				include("conexion.php");
 			$conexion = mysql_connect($servidor,$usuario,$contraseña);
@@ -40,7 +41,7 @@
 				}
 				?>
 				</table>
-				<form action="modificar_papeleria.php" method="GET">
+				<form action="modificar_papeleria.php?SQL=" method="GET">
 					<label>Papeleria: </label> 
 					<select name="papeleria">
 						<?php 
@@ -55,6 +56,7 @@
 							}
 						?>	
 					</select>
+					<input type="hidden" name="sql" value="<?php echo $sqlpas; ?>" />
 					<button type="submit">Modificar</button>
 				</form>
 				<input class="button blue medium radius" name="Restablecer" type="reset" value="Atras" onClick="history.back()">

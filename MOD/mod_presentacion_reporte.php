@@ -9,6 +9,7 @@
 	<body>
 		<?php 
 			$SQL = $_GET["SQL"];
+			$consulta = $SQL;
 			include("../PHP/conexion.php");
 			$conexion = mysql_connect($servidor,$usuario,$contraseña);
 						mysql_select_db($BD,$conexion);
@@ -35,7 +36,7 @@
 						echo '<td>' . $fila[3] . '</td>';
 						echo '<td>' . $fila[0] . '</td>';
 						echo '<td>' . $fila[5] . '</td>';
- 						echo '<td> <a class="button red small radius" href=../PHP/modificar_listado.php?id='. $fila[4] .'>Modificar</a>';
+ 						echo '<td> <a class="button red small radius" href=../PHP/modificar_listado.php?SQL='.urlencode($consulta).'&id='. $fila[4] . '>Modificar</a>';
 					echo '</tr>';
 				}
 				?>
@@ -45,4 +46,5 @@
 			</div>
 		</div>	
 	</body>
+
 </html>
