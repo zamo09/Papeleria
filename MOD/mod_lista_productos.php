@@ -39,7 +39,7 @@
 				}
 				?>
 				</table>
-				<a class="button yellow medium radius" href=javascript:window.print();>Imprimir</a>
+				<a class="button yellow medium radius" href=javascript:window.print();>Imprimir </a>
 				<input class="button blue medium radius" name="Restablecer" type="reset" value="Atras" onClick="history.back()">
 			</div>
 		</div>	
