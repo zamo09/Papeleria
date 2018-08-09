@@ -45,6 +45,8 @@
 				<input class="button blue medium radius" name="Restablecer" type="reset" value="Atras" onClick="history.back()">
 			</div>
 		</div>	
+
+		
 	</body>
 
 </html>

@@ -18,7 +18,8 @@
 		<div id="container">	
 			<div id="content">
 				<h1>Reporte de Papeleria</h1>
-				<table>
+				 <label>Buscar por nombre: </label><input type="text" id="Buscador" onkeyup="myFunction()" placeholder="Nombre del producto ...">
+				<table id="myTable">
 					<tr>
 						<th>Nombre</th>
 						<th>Marca</th>
@@ -42,6 +43,29 @@
 				<input class="button blue medium radius" name="Restablecer" type="reset" value="Atras" onClick="history.back()">
 			</div>
 		</div>	
+<script>
+function myFunction() {
+  // declarar variables
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("Buscador");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // En la seccion de la td esta la columna en la cual va a buscar 
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+
 	</body>
 </html>
 <li>
