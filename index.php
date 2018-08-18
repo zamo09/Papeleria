@@ -7,7 +7,6 @@
 	</head>
 <body>
 	<form action="PHP/insertar_pedido.php" method="GET">
-<<<<<<< HEAD
 		<div class="contenedor">
 			<div class="col-xs-10">
 					<h1>Pedidos de papeleria</h1>
@@ -27,11 +26,10 @@
 						</select><br>
 					<lable>Fecha: </lable> <input type="text" name="fecha" value="<?php echo date("y.m.d"); ?>" readonly="readonly"><br>
 			</div>
-=======
 		<div id="contenedor">
 			<h1>Pedidos de papeleria</h1>
 			<p>Para realizar el pedido de papeleria se tiene que seleccionar el departamento del cual se pedira el pedido y se da clic en el boton continuar. segjhs sadas asd</p>
-			<label>Departamento: prueba de cambio</label>
+			<label>Departamento: prueba de cambio en la pc</label>
 				<select name="Dept">
 					<?php
 					include ("PHP/conexion.php");
@@ -45,7 +43,6 @@
 					?>
 				</select><br>
 			<lable>Fecha: </lable> <input type="text" name="fecha" value="<?php echo date("y.m.d"); ?>" readonly="readonly"><br>
->>>>>>> 8de79a2a01e42832222a3b44c322432b101b88c8
 		</div>
 		<div id="botonera">
 			<input type="submit" name="continuar" value="Continuar" id="id_continuar">
