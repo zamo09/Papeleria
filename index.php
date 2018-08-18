@@ -29,7 +29,7 @@
 		<div id="contenedor">
 			<h1>Pedidos de papeleria</h1>
 			<p>Para realizar el pedido de papeleria se tiene que seleccionar el departamento del cual se pedira el pedido y se da clic en el boton continuar. segjhs sadas asd</p>
-			<label>Departamento: prueba de cambio en la pc</label>
+			<label>Departamento: prueba de cambio en la pc y por ultimo en la ipad</label>
 				<select name="Dept">
 					<?php
 					include ("PHP/conexion.php");
